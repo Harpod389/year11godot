@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cro2j08un1ywb"
+path="res://.godot/imported/Undead Awakening.mp3-3587513939662a4c7d6f2b14e414b2e9.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Undead Awakening.mp3"
+dest_files=["res://.godot/imported/Undead Awakening.mp3-3587513939662a4c7d6f2b14e414b2e9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

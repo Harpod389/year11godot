@@ -1,0 +1,132 @@
+[gd_scene load_steps=22 format=3 uid="uid://dprgm38wea8w2"]
+
+[ext_resource type="Texture2D" uid="uid://cm261e5q6fr4u" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0427_Capa-428.png" id="1_hacg1"]
+[ext_resource type="Texture2D" uid="uid://blnixcijnwxvd" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0428_Capa-429.png" id="2_ntvh1"]
+[ext_resource type="Texture2D" uid="uid://dl1mpglt1jahn" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0429_Capa-430.png" id="3_er21c"]
+[ext_resource type="Texture2D" uid="uid://c1g5awxsgt8b0" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0424_Capa-425.png" id="4_clb2b"]
+[ext_resource type="Texture2D" uid="uid://bywu3mfpakynp" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0425_Capa-426.png" id="5_ig05f"]
+[ext_resource type="Texture2D" uid="uid://beed63ws7yas8" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0426_Capa-427.png" id="6_cuptv"]
+[ext_resource type="Texture2D" uid="uid://ivpjtfu22j4l" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0421_Capa-422.png" id="7_6wyv6"]
+[ext_resource type="Texture2D" uid="uid://d35n2bmped2q1" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0422_Capa-423.png" id="8_eali5"]
+[ext_resource type="Texture2D" uid="uid://bbhyqr33rnpyd" path="res://Sprites/Damaged Big Zombie Animation Frames/Zombie-Tileset---_0423_Capa-424.png" id="9_rylsx"]
+[ext_resource type="Texture2D" uid="uid://dmvl0dw2u7rgw" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0412_Capa-413.png" id="10_yiqus"]
+[ext_resource type="Texture2D" uid="uid://cwgnkyyj76ua8" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0413_Capa-414.png" id="11_6yptb"]
+[ext_resource type="Texture2D" uid="uid://cclntlultrno4" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0414_Capa-415.png" id="12_sa81n"]
+[ext_resource type="Texture2D" uid="uid://c2cielqvbe2a6" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0415_Capa-416.png" id="13_ab0ww"]
+[ext_resource type="Texture2D" uid="uid://bybwalr5pm4aa" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0416_Capa-417.png" id="14_436eh"]
+[ext_resource type="Texture2D" uid="uid://ccuvtkx8gd2n3" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0417_Capa-418.png" id="15_vtyf1"]
+[ext_resource type="Texture2D" uid="uid://bpx8cfbi4504a" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0418_Capa-419.png" id="16_7yiht"]
+[ext_resource type="Texture2D" uid="uid://b4e1arer527b2" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0419_Capa-420.png" id="17_45yd3"]
+[ext_resource type="Texture2D" uid="uid://bktjd0il53od2" path="res://Sprites/Big Zombie Walking Animation Frames/Zombie-Tileset---_0420_Capa-421.png" id="18_vkfd1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6lmql"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hacg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ntvh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_er21c")
+}],
+"loop": true,
+"name": &"Damage-Up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_clb2b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ig05f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_cuptv")
+}],
+"loop": true,
+"name": &"Damage-left_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_6wyv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_eali5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_rylsx")
+}],
+"loop": true,
+"name": &"Damaged-Down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_yiqus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6yptb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_sa81n")
+}],
+"loop": true,
+"name": &"down",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_ab0ww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_436eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_vtyf1")
+}],
+"loop": true,
+"name": &"left_right",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_7yiht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_45yd3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_vkfd1")
+}],
+"loop": true,
+"name": &"up",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0iyv"]
+radius = 6.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qcgwt"]
+radius = 7.07107
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6lmql")
+animation = &"down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_s0iyv")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_qcgwt")
+
+[node name="DamageTimer" type="Timer" parent="HurtBox"]
