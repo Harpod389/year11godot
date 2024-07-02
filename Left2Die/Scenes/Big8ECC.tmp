@@ -120,7 +120,7 @@ script = ExtResource("1_vkp2m")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_6lmql")
-animation = &"down"
+animation = &"Damaged-Down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_s0iyv")

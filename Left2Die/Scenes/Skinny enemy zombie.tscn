@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b8w0rk065k1n7"]
+[gd_scene load_steps=22 format=3 uid="uid://b8w0rk065k1n7"]
 
 [ext_resource type="Texture2D" uid="uid://cvt4vpyg4oa71" path="res://Sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0409_Capa-410.png" id="1_t8aj2"]
 [ext_resource type="Texture2D" uid="uid://ciwk5buin5aoo" path="res://Sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0410_Capa-411.png" id="2_tkp7m"]
@@ -106,8 +106,26 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4lwt5"]
+radius = 3.0
+height = 12.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkji5"]
+radius = 4.0
+height = 14.0
+
+[node name="SkinnyEnemyZombie" type="CharacterBody2D" groups=["Enemy"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lpco")
 animation = &"Damaged-down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4lwt5")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CapsuleShape2D_qkji5")
+
+[node name="DamageTimer" type="Timer" parent="HurtBox"]

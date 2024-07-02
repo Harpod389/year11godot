@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cdc5xgeoh2duo"]
+[gd_scene load_steps=22 format=3 uid="uid://cdc5xgeoh2duo"]
 
 [ext_resource type="Texture2D" uid="uid://pp560whgu1wh" path="res://Sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0439_Capa-440.png" id="1_1yhg2"]
 [ext_resource type="Texture2D" uid="uid://c53ntv03k7hrv" path="res://Sprites/Damaged Kid Zombie Animation Frames/Zombie-Tileset---_0440_Capa-441.png" id="2_6ihva"]
@@ -106,8 +106,24 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qhmm"]
+radius = 3.16228
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sa0qy"]
+radius = 4.0
+
+[node name="KidEnemyZombie" type="CharacterBody2D" groups=["Enemy"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b8qwk")
 animation = &"Up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8qhmm")
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_sa0qy")
+
+[node name="DamageTimer" type="Timer" parent="HurtBox"]
