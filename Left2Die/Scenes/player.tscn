@@ -251,7 +251,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_fy7ds")
 }],
 "loop": true,
-"name": &"Shooting ",
+"name": &"Shooting",
 "speed": 50.0
 }]
 
@@ -264,9 +264,8 @@ script = ExtResource("1_vauvt")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lw558")
-animation = &"Shooting "
-frame = 3
-frame_progress = 0.455021
+animation = &"Shooting"
+autoplay = "Shooting"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7wvwh")
