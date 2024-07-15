@@ -5,6 +5,8 @@ extends CharacterBody2D
 @export var ACCELERATION = 20 
 @export var FRICTION = 10.0
 @onready var sprite = $Sprite
+@onready var gunshots = $Gunshots
+
 const BULLET = preload("res://Scenes/Bullet.tscn")
 func check_animation():
 	if velocity == Vector2.ZERO:
@@ -35,6 +37,7 @@ func _physics_process(delta):
 		new_bullet.global_position = global_position
 		new_bullet.look_at(get_global_mouse_position())
 		add_sibling(new_bullet)
+		gunshots.play()
 		
 
 		
