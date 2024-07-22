@@ -10,3 +10,6 @@ func _on_Bullet_body_entered(body):
 		body.queue_free()
 	queue_free() 
 	
+func _on_body_entered(animated_sprite_2d):
+	if animated_sprite_2d. get_name() == "KidEnemeyZombie":
+		queue_free()

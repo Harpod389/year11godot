@@ -27,6 +27,7 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = true 
 	elif velocity.x < 0: 
 		animated_sprite_2d.flip_h = false 
+
 	
 	move_and_slide()
 	check_animation()
