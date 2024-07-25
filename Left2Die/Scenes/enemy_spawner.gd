@@ -17,7 +17,7 @@ func _ready():
 func first_wave():
 	$Timer.start()
 	enemy_type = KidEnemyZombie
-	wave_counter = 20
+	wave_counter = 50
 
 func second_wave():
 	$Timer.start

@@ -21,7 +21,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lolmr"]
 size = Vector2(5, 3)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
 script = ExtResource("1_28abp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

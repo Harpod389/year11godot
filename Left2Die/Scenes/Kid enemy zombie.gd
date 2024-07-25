@@ -27,8 +27,25 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = true 
 	elif velocity.x < 0: 
 		animated_sprite_2d.flip_h = false 
-
-	
 	move_and_slide()
 	check_animation()
+
+func take_damage(dmg):
+	health -= dmg
+	if health <= 0 :
+		
+		queue_free()
+		
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("Bullet"):
+		take_damage(5)
+		area.queue_free()
+		
+	
+
+
+#func _on_hurt_box_area_entered(area):
+	#if area.is_in_group("Bullet"):
+		#queue_free()
+		#area.queue_free()
 
