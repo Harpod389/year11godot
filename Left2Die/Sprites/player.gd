@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 300.0
-@export var ACCELERATION = 20 
+@export var SPEED = 150.0
+@export var ACCELERATION = 15 
 @export var FRICTION = 10.0
 @onready var sprite = $Sprite
 @onready var gunshots = $Gunshots
@@ -39,9 +39,8 @@ func _physics_process(delta):
 		add_sibling(new_bullet)
 		gunshots.play()
 		
-
 		
-			
+
 
 	check_animation()
 	move_and_slide()

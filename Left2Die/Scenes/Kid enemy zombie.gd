@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 const SPEED = 100.0
 const JUMP_VELOCITY = -400.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
@@ -21,7 +20,9 @@ func check_animation():
 
 func _physics_process(delta):
 	var direction_to_player = global_position.direction_to(player.global_position) 
-	velocity = direction_to_player * SPEED 
+	velocity = direction_to_player * SPEED  
+	
+	
 	
 	if velocity.x > 0:
 		animated_sprite_2d.flip_h = true 
@@ -41,7 +42,12 @@ func _on_hurt_box_area_entered(area):
 		take_damage(5)
 		area.queue_free()
 		
-	
+
+
+
+
+
+
 
 
 #func _on_hurt_box_area_entered(area):
