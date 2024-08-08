@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://d0j8vxdugtpyi"]
+[gd_scene load_steps=41 format=3 uid="uid://d0j8vxdugtpyi"]
 
 [ext_resource type="Texture2D" uid="uid://cmu2gcr0ydx0p" path="res://Sprites/Officer_sheet_unboxed_0.png" id="1_3ro80"]
 [ext_resource type="Script" path="res://Sprites/player.gd" id="1_vauvt"]
@@ -266,13 +266,16 @@ bg_color = Color(0.719873, 0.0537283, 0.152405, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tx27q"]
 bg_color = Color(0.160784, 0.662745, 0.145098, 1)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_k1t0w"]
+radius = 6.0
+height = 32.0
+
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 script = ExtResource("1_vauvt")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lw558")
 animation = &"Shooting"
-autoplay = "Shooting"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7wvwh")
@@ -351,3 +354,9 @@ text = "Level Up Speed
 [node name="btn_gun_level" type="Button" parent="UI/Control/WaveFinsihedNotice/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Level up Gun"
+
+[node name="HurtBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CapsuleShape2D_k1t0w")
+debug_color = Color(0.937775, 0.22257, 0.297979, 0.42)

@@ -32,8 +32,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_nhagk")
 }],
-"loop": true,
-"name": &"Damaged-Down",
+"loop": false,
+"name": &"DamagedDown",
 "speed": 5.0
 }, {
 "frames": [{
@@ -46,8 +46,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_5di0k")
 }],
-"loop": true,
-"name": &"Damaged-left_right",
+"loop": false,
+"name": &"Damagedleft_right",
 "speed": 5.0
 }, {
 "frames": [{
@@ -60,8 +60,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("9_bltqi")
 }],
-"loop": true,
-"name": &"Damaged-up",
+"loop": false,
+"name": &"Damagedup",
 "speed": 5.0
 }, {
 "frames": [{
@@ -120,9 +120,9 @@ script = ExtResource("1_jll5k")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b8qwk")
-animation = &"Up"
+animation = &"Damagedup"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 2
 shape = SubResource("CircleShape2D_8qhmm")
 

@@ -1,11 +1,21 @@
 extends CharacterBody2D
 
 
+@export var health = 100.0
 @export var SPEED = 150.0
 @export var ACCELERATION = 15 
 @export var FRICTION = 10.0
 @onready var sprite = $Sprite
 @onready var gunshots = $Gunshots
+const DAMAGE_RATE = 5.0
+@onready var overlapping_mobs = $HurtBox
+@export var damage_taken_on_collision : int = 10
+
+func _on_take_damage(damage_amount: int):
+	health -= damage_amount
+	if health <= 0:
+		$sprite.play("Death")
+
 
 const BULLET = preload("res://Scenes/Bullet.tscn")
 func check_animation():
@@ -16,6 +26,12 @@ func check_animation():
 	if Input.is_action_pressed("shoot"):
 		sprite.play("Shooting")
 	
+
+
+
+
+
+
  
 
 func _physics_process(delta):
@@ -31,6 +47,10 @@ func _physics_process(delta):
 		sprite.flip_h = false 
 	elif velocity.x < 0: 
 		sprite.flip_h = true 
+
+
+
+
 
 	if Input.is_action_just_pressed("shoot"):
 		var new_bullet = BULLET.instantiate()
