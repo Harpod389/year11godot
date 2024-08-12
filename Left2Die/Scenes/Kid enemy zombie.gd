@@ -4,7 +4,14 @@ const JUMP_VELOCITY = -400.0
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var player = get_tree().get_first_node_in_group("Player")
 @export var health = 10 
+@onready var HurtBox  = $HurtBox
 var dead = false
+
+
+
+
+
+
 
 func check_animation(): 
 	var angle = rad_to_deg(velocity.angle())
@@ -60,3 +67,13 @@ func take_damage(dmg):
 		#queue_free()
 		#area.queue_free()
 
+
+
+func _on_hurt_box_body_entered(body):
+	if 'get_damage' in body:
+		body.get_damage(10)
+
+
+func _on_area_2d_body_entered(body):
+		if 'get_damage' in body:
+			body.get_damage(10)
