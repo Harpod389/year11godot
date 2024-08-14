@@ -173,7 +173,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gl3fg")
 }],
-"loop": true,
+"loop": false,
 "name": &"Death",
 "speed": 10.0
 }, {
@@ -275,7 +275,7 @@ script = ExtResource("1_vauvt")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_lw558")
-animation = &"Damage"
+animation = &"Death"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_7wvwh")
