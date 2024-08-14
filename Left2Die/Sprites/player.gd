@@ -33,12 +33,13 @@ func get_damage(amount):
 		print("i died")
 		$Sprite.play("Death")
 		died = true
+		GameManagert.score += 1 
 		
 
  
 
 func _physics_process(delta):
-	if died == true:
+	if died == false:
 		var direction = Input.get_vector("left","right","up","down").normalized()
 		if direction:
 			velocity = velocity.move_toward(direction * SPEED, ACCELERATION)

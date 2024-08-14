@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://hb14lux32t31"]
+[gd_scene load_steps=8 format=3 uid="uid://hb14lux32t31"]
 
 [ext_resource type="Script" path="res://Scenes/Levels/world.gd" id="1_2y2nq"]
 [ext_resource type="PackedScene" uid="uid://d0j8vxdugtpyi" path="res://Scenes/player.tscn" id="1_3oneu"]
 [ext_resource type="Texture2D" uid="uid://b1klwk5iu4h8x" path="res://Scenes/Levels/Zombie Apocalypse Tileset Reference.png" id="2_rf5sr"]
 [ext_resource type="PackedScene" uid="uid://dc8usaq3xlyn" path="res://Scenes/enemy_spawner.tscn" id="3_08olt"]
+[ext_resource type="Script" path="res://Scenes/Levels/Label.gd" id="5_p3nse"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y4tq8"]
 texture = ExtResource("2_rf5sr")
@@ -317,3 +318,10 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_08olt")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("5_p3nse")

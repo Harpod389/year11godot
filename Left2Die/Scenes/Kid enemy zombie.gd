@@ -49,11 +49,11 @@ func take_damage(dmg):
 		await $AnimatedSprite2D.animation_finished
 		queue_free()
 		
-#func _on_hurt_box_area_entered(area):
-	#if area.is_in_group("Bullet"):
-		#take_damage(5)
-		#area.queue_free()
-		#
+func _on_hurt_box_area_entered(area):
+	if area.is_in_group("Bullet"):
+		take_damage(5)
+		area.queue_free()
+		
 
 
 
