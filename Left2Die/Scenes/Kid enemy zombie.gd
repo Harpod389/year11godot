@@ -13,6 +13,7 @@ var dead = false
 
 
 
+
 func check_animation(): 
 	var angle = rad_to_deg(velocity.angle())
 	if angle >-45 and angle < 45:
@@ -26,7 +27,9 @@ func check_animation():
 
 
 func _physics_process(delta):
-	if dead : return
+	if dead :
+		
+		return
 	var direction_to_player = global_position.direction_to(player.global_position) 
 	velocity = direction_to_player * SPEED  
 	
@@ -40,23 +43,26 @@ func _physics_process(delta):
 	check_animation()
 
 func take_damage(dmg):
+	if dead:return
 	health -= dmg
 	#print("ouch")
 	if health <= 0 :
-		print("dead")
-		dead = true
+		dead = true 
+		GameManager.score += 1
 		$AnimatedSprite2D.play("Damagedup")
 		await $AnimatedSprite2D.animation_finished
 		queue_free()
-		
+
+
+
+
+
+
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("Bullet"):
 		take_damage(5)
 		area.queue_free()
 		
-
-
-
 
 
 

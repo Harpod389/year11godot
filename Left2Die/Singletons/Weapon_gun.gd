@@ -24,4 +24,3 @@ func level_up_gun():
 			gun_projectiles = 2 
 			gun_time = 0.5
 			gun_knockback = 20
-

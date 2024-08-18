@@ -33,7 +33,8 @@ func get_damage(amount):
 		print("i died")
 		$Sprite.play("Death")
 		died = true
-		GameManagert.score += 1 
+		await $Sprite.animation_finished
+		get_tree().reload_current_scene()
 		
 
  
@@ -61,12 +62,3 @@ func _physics_process(delta):
 
 		check_animation()
 		move_and_slide()
-
-
-
-
-
-
-
-
-
