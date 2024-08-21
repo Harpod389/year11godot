@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cdxw433k0ngwm"]
+[gd_scene load_steps=3 format=3 uid="uid://cdxw433k0ngwm"]
 
-[ext_resource type="Texture2D" uid="uid://ijx66xcxswk2" path="res://Sprites/titlepic.PNG" id="1_pm53x"]
+[ext_resource type="Script" path="res://Scenes/Levels/main_menu.gd" id="1_gn8lj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wwavc"]
+load_path = "res://.godot/imported/titlepic.PNG-89e4dbfa21dae67023d19c20b1378087.ctex"
 
 [node name="Main_menu" type="Control"]
 layout_mode = 3
@@ -9,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gn8lj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -17,12 +21,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_pm53x")
+texture = SubResource("CompressedTexture2D_wwavc")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_left = -367.0
+offset_top = -169.0
+offset_right = -67.0
+offset_bottom = 131.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Start
+"
+
+[node name="OptionsButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Options
+"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Quit
+"
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
