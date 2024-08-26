@@ -1,8 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://d0j8vxdugtpyi"]
+[gd_scene load_steps=42 format=3 uid="uid://d0j8vxdugtpyi"]
 
 [ext_resource type="Texture2D" uid="uid://cmu2gcr0ydx0p" path="res://Sprites/Officer_sheet_unboxed_0.png" id="1_3ro80"]
 [ext_resource type="Script" path="res://Sprites/player.gd" id="1_vauvt"]
 [ext_resource type="AudioStream" uid="uid://bt7ya1kpsh06o" path="res://Sounds/762x39 Spray MP3.mp3" id="3_pr808"]
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="4_8eue5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ocsf8"]
 atlas = ExtResource("1_3ro80")
@@ -285,6 +286,7 @@ stream = ExtResource("3_pr808")
 volume_db = -16.0
 
 [node name="UI" type="CanvasLayer" parent="."]
+script = ExtResource("4_8eue5")
 
 [node name="Control" type="Control" parent="UI"]
 layout_mode = 3
@@ -360,3 +362,5 @@ text = "Level up Gun"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 shape = SubResource("CapsuleShape2D_k1t0w")
 debug_color = Color(0.937775, 0.22257, 0.297979, 0.42)
+
+[connection signal="visibility_changed" from="UI/Control/WaveFinsihedNotice" to="UI" method="_on_wave_finsihed_notice_visibility_changed"]
