@@ -286,6 +286,7 @@ stream = ExtResource("3_pr808")
 volume_db = -16.0
 
 [node name="UI" type="CanvasLayer" parent="."]
+process_mode = 3
 script = ExtResource("4_8eue5")
 
 [node name="Control" type="Control" parent="UI"]
@@ -364,3 +365,5 @@ shape = SubResource("CapsuleShape2D_k1t0w")
 debug_color = Color(0.937775, 0.22257, 0.297979, 0.42)
 
 [connection signal="visibility_changed" from="UI/Control/WaveFinsihedNotice" to="UI" method="_on_wave_finsihed_notice_visibility_changed"]
+[connection signal="pressed" from="UI/Control/WaveFinsihedNotice/MarginContainer/VBoxContainer/btn_health_level" to="UI" method="_on_btn_health_level_pressed"]
+[connection signal="pressed" from="UI/Control/WaveFinsihedNotice/MarginContainer/VBoxContainer/btn_gun_level" to="UI" method="_on_btn_gun_level_pressed"]

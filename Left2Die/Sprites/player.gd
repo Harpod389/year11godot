@@ -37,7 +37,7 @@ func get_damage(amount):
 		get_tree().reload_current_scene()
 		
 
- 
+
 
 func _physics_process(delta):
 	if died == false:

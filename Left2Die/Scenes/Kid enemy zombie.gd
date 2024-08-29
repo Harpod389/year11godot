@@ -51,6 +51,7 @@ func take_damage(dmg):
 		GameManager.score += 1
 		$AnimatedSprite2D.play("Damagedup")
 		await $AnimatedSprite2D.animation_finished
+		PlayerStats.enemy_killed()
 		queue_free()
 
 
