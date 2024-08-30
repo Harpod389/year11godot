@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 @onready var wave_finsihed_notice: PanelContainer = $Control/WaveFinsihedNotice
+@onready var label_2: Label = $CanvasLayer/Label2
 
 @onready var experience = $Control/Experience
 @onready var health = $Control/Health
@@ -19,6 +20,8 @@ func update_xp():
 
 func level_up():
 	wave_finsihed_notice.visible = true 
+	await wave_finsihed_notice
+	$CanvasLayer/Label2.visible = true
 	update_xp()
 	
 

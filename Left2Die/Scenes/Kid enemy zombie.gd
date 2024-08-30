@@ -42,6 +42,9 @@ func _physics_process(delta):
 	move_and_slide()
 	check_animation()
 
+
+
+
 func take_damage(dmg):
 	if dead:return
 	health -= dmg

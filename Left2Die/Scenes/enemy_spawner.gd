@@ -1,12 +1,14 @@
 extends Node2D
 
 @onready var world = get_node("/root/World")
-@export var experience_value = 100 
 
-var KidEnemyZombie := preload("res://Scenes/Kid enemy zombie.tscn")
-var SkinnyEnemyZombie
+
+
+
+@export var KidEnemyZombie :PackedScene
+@export var SkinnyEnemyZombie :PackedScene
 var spawn_points := []
-var enemy_type
+var enemy_type 
 signal wave_finished
 @export var wave_counter = 20
 # Called when the node enters the scene tree for the first time.
