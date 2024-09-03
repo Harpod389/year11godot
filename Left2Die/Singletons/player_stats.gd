@@ -9,6 +9,7 @@ var enemy_left = 0
 signal level_up 
 signal add_xp 
 signal wave_finished
+signal take_damage
 
 func level_up_player():
 	player_level+=1
@@ -20,7 +21,10 @@ func level_up_player():
 func add_max_health():
 	player_max_health += 20
 	player_health = player_max_health
-	emit_signal("taiedamage")
+	emit_signal("take_damage")
+
+
+
 
 func enemy_killed():
 	enemy_left -=1
@@ -33,3 +37,6 @@ func enemy_killed():
 	#if player_experience >= next_level:
 		#level_up_player()
 	
+func damage_player(amount):
+	player_health -= amount
+	emit_signal("take_damage")

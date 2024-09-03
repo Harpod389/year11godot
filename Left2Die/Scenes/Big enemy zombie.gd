@@ -19,6 +19,7 @@ func check_animation():
 		sprite.play("up")
 
 
+
 func _physics_process(delta):
 	var direction_to_player = global_position.direction_to(player.global_position) 
 	velocity = direction_to_player * SPEED 

@@ -6,7 +6,18 @@ const JUMP_VELOCITY = -400.0
 @export var health = 10 
 @onready var HurtBox  = $HurtBox
 var dead = false
+@onready var damage_timer: Timer = $HurtBox/DamageTimer
+@export var damage = 5
 
+func check_collisions():
+	if not damage_timer.is_stopped():
+		return
+	var collisions = $HurtBox.get_overlapping_bodies()
+	if collisions:
+		for collision in collisions:
+			if collision. is_in_group("Player") and damage_timer.is_stopped():
+				PlayerStats.damage_player(damage)
+				damage_timer.start()
 
 
 
@@ -39,6 +50,7 @@ func _physics_process(delta):
 		animated_sprite_2d.flip_h = true 
 	elif velocity.x < 0: 
 		animated_sprite_2d.flip_h = false 
+		
 	move_and_slide()
 	check_animation()
 
