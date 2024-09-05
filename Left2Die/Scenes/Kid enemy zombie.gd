@@ -9,6 +9,7 @@ var dead = false
 @onready var damage_timer: Timer = $HurtBox/DamageTimer
 @export var damage = 5
 
+
 func check_collisions():
 	if not damage_timer.is_stopped():
 		return
@@ -17,7 +18,7 @@ func check_collisions():
 		for collision in collisions:
 			if collision. is_in_group("Player") and damage_timer.is_stopped():
 				PlayerStats.damage_player(damage)
-				damage_timer.start()
+
 
 
 
@@ -92,10 +93,19 @@ func _on_hurt_box_area_entered(area):
 
 
 func _on_hurt_box_body_entered(body):
-	if 'get_damage' in body:
-		body.get_damage(10)
+	
+	if body.is_in_group("Player"):
+		#body.get_damage(10)
+		print("hit body")
+		PlayerStats.damage_player(damage)
+		damage_timer.start()
+		
 
 
 func _on_area_2d_body_entered(body):
-		if 'get_damage' in body:
-			body.get_damage(10)
+		
+		if body.is_in_group("Player"):
+			print("hit")
+			#body.get_damage(10)
+			PlayerStats.damage_player(damage)
+			damage_timer.start()

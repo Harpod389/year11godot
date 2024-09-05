@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @onready var wave_finsihed_notice: PanelContainer = $Control/WaveFinsihedNotice
-@onready var label_2: Label = $CanvasLayer/Label2
+
 
 @onready var experience = $Control/Experience
 @onready var health = $Control/Health
@@ -19,7 +19,8 @@ func update_xp():
 	experience.value = PlayerStats.player_experience
 
 func update_health():
-	health.max_value = PlayerStats.next_level
+	print("updating health")
+	health.max_value = PlayerStats.player_max_health
 	health.value = PlayerStats.player_health
 
 

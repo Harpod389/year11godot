@@ -22,20 +22,21 @@ func check_animation():
 	if Input.is_action_pressed("shoot"):
 		sprite.play("Shooting")
 	
-
-func get_damage(amount):
-	if died:
-		return
-	health -= amount
-	print(health)
-	$Sprite.play("Damage")
-	if health <= 0:
-		print("i died")
-		$Sprite.play("Death")
-		died = true
-		await $Sprite.animation_finished
-		get_tree().reload_current_scene()
-		
+#
+#func get_damage(amount):
+	#if died:
+		#return
+	#health -= amount
+	#$UI/Control/Health.value = health
+	#print(health)
+	#$Sprite.play("Damage")
+	#if health <= 0:
+		#print("i died")
+		#$Sprite.play("Death")
+		#died = true
+		#await $Sprite.animation_finished
+		#get_tree().reload_current_scene()
+		#
 
 
 
