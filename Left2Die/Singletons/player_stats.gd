@@ -6,7 +6,8 @@ var player_health = 100
 var player_max_health = 100 
 var next_level = 15 
 var enemy_left = 0
-var SPEED = 80
+var SPEED = 150
+var next_SPEED= 20
 signal level_up 
 signal add_xp 
 signal wave_finished
@@ -26,7 +27,9 @@ func add_max_health():
 	emit_signal("take_damage")
 
 func level_up_speed():
-	SPEED += 20 
+	SPEED += 100
+	next_SPEED= SPEED
+	emit_signal("speed")
 
 
 func enemy_killed():

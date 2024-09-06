@@ -305,6 +305,12 @@ anchor_right = 1.0
 offset_bottom = 27.0
 grow_horizontal = 2
 
+[node name="Speed" type="TextureProgressBar" parent="UI/Control"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Health" type="ProgressBar" parent="UI/Control"]
 layout_mode = 1
 anchors_preset = 12
@@ -367,4 +373,5 @@ debug_color = Color(0.937775, 0.22257, 0.297979, 0.42)
 
 [connection signal="visibility_changed" from="UI/Control/WaveFinsihedNotice" to="UI" method="_on_wave_finsihed_notice_visibility_changed"]
 [connection signal="pressed" from="UI/Control/WaveFinsihedNotice/MarginContainer/VBoxContainer/btn_health_level" to="UI" method="_on_btn_health_level_pressed"]
+[connection signal="pressed" from="UI/Control/WaveFinsihedNotice/MarginContainer/VBoxContainer/btn_speed_level" to="UI" method="_on_btn_speed_level_pressed"]
 [connection signal="pressed" from="UI/Control/WaveFinsihedNotice/MarginContainer/VBoxContainer/btn_gun_level" to="UI" method="_on_btn_gun_level_pressed"]

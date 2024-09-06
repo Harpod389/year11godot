@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 @export var health = 100.0
-@export var SPEED = 150.0
+@export var SPEED = 100
 @export var ACCELERATION = 15 
 @export var FRICTION = 10.0
 @onready var sprite = $Sprite
@@ -23,20 +23,20 @@ func check_animation():
 		sprite.play("Shooting")
 	
 #
-#func get_damage(amount):
-	#if died:
-		#return
-	#health -= amount
-	#$UI/Control/Health.value = health
-	#print(health)
-	#$Sprite.play("Damage")
-	#if health <= 0:
-		#print("i died")
-		#$Sprite.play("Death")
-		#died = true
-		#await $Sprite.animation_finished
-		#get_tree().reload_current_scene()
-		#
+func get_damage(amount):
+	if died:
+		return
+	health -= amount
+	$UI/Control/Health.value = health
+	print(health)
+	$Sprite.play("Damage")
+	if health <= 0:
+		print("i died")
+		$Sprite.play("Death")
+		died = true
+		await $Sprite.animation_finished
+		get_tree().reload_current_scene()
+		
 
 
 
@@ -44,7 +44,7 @@ func _physics_process(delta):
 	if died == false:
 		var direction = Input.get_vector("left","right","up","down").normalized()
 		if direction:
-			velocity = velocity.move_toward(direction * SPEED, ACCELERATION)
+			velocity = velocity.move_toward(direction * PlayerStats.SPEED, ACCELERATION)
 		else:
 			velocity = velocity.move_toward(Vector2.ZERO, FRICTION)
 			if velocity.x > 0: 

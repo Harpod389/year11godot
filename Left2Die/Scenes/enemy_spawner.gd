@@ -45,6 +45,7 @@ func _on_timer_timeout():
 	zombie.position = spawn.position
 	world.add_child(zombie)
 	if wave_counter > 0:
+		Marker2D.visible = false
 		$Timer.start()
 	########################FIX BELOW
 	#elif wave_counter <= 0:

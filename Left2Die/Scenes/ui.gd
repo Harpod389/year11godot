@@ -3,8 +3,11 @@ extends CanvasLayer
 @onready var wave_finsihed_notice: PanelContainer = $Control/WaveFinsihedNotice
 
 
+
 @onready var experience = $Control/Experience
 @onready var health = $Control/Health
+@onready var speed = $Control/Speed
+
 
 
 
@@ -12,7 +15,13 @@ func _ready():
 	PlayerStats.level_up.connect(level_up)
 	PlayerStats.add_xp.connect(update_xp)
 	PlayerStats.take_damage.connect(update_health)
+	PlayerStats.speed.connect(update_speed)
 
+
+func update_speed():
+	speed.max_value = PlayerStats.next_SPEED
+	speed.value = PlayerStats.SPEED
+	
 
 func update_xp():
 	experience.max_value = PlayerStats.next_level
@@ -50,3 +59,8 @@ func _on_btn_health_level_pressed():
 func _on_btn_gun_level_pressed() -> void:
 	WeaponGun.level_up_gun()
 	wave_finsihed_notice.visible= false
+
+
+func _on_btn_speed_level_pressed() -> void:
+	PlayerStats.level_up_speed()
+	wave_finsihed_notice.visible= false 

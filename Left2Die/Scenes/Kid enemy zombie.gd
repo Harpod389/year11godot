@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 @onready var HurtBox  = $HurtBox
 var dead = false
 @onready var damage_timer: Timer = $HurtBox/DamageTimer
-@export var damage = 5
+@export var damage = 10
 
 
 func check_collisions():
