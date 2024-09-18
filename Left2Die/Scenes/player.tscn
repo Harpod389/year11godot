@@ -298,7 +298,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Experience" type="ProgressBar" parent="UI/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
@@ -306,7 +305,6 @@ offset_bottom = 27.0
 grow_horizontal = 2
 
 [node name="Speed" type="TextureProgressBar" parent="UI/Control"]
-visible = false
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -325,7 +323,6 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_tx27q")
 value = 100.0
 
 [node name="WaveFinsihedNotice" type="PanelContainer" parent="UI/Control"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
