@@ -4,6 +4,7 @@ extends CanvasLayer
 
 
 
+
 @onready var experience = $Control/Experience
 @onready var health = $Control/Health
 @onready var speed = $Control/Speed
@@ -33,8 +34,9 @@ func update_health():
 	health.value = PlayerStats.player_health
 
 
+
 func level_up():
-	wave_finsihed_notice.visible = true 
+	wave_finsihed_notice.visibility = true 
 	#await wave_finsihed_notice
 	#$CanvasLayer/Label2.visible = true
 	update_xp()
@@ -42,7 +44,7 @@ func level_up():
 
 
 func _on_wave_finsihed_notice_visibility_changed():
-	if wave_finsihed_notice.visible == true:
+	if wave_finsihed_notice.visibility == true:
 		get_tree().paused = true 
 	else:
 		get_tree().paused = false
