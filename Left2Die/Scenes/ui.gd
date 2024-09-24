@@ -13,6 +13,7 @@ extends CanvasLayer
 
 
 func _ready():
+	print(wave_finsihed_notice)
 	PlayerStats.level_up.connect(level_up)
 	PlayerStats.add_xp.connect(update_xp)
 	PlayerStats.take_damage.connect(update_health)
@@ -36,7 +37,7 @@ func update_health():
 
 
 func level_up():
-	wave_finsihed_notice.visibility = true 
+	wave_finsihed_notice.visible = true 
 	#await wave_finsihed_notice
 	#$CanvasLayer/Label2.visible = true
 	update_xp()
@@ -44,7 +45,7 @@ func level_up():
 
 
 func _on_wave_finsihed_notice_visibility_changed():
-	if wave_finsihed_notice.visibility == true:
+	if wave_finsihed_notice.visible == true:
 		get_tree().paused = true 
 	else:
 		get_tree().paused = false

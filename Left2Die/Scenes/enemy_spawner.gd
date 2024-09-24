@@ -6,12 +6,14 @@ extends Node2D
 
 
 
+@export var BigEnemyZombie : PackedScene
 @export var KidEnemyZombie :PackedScene
 @export var SkinnyEnemyZombie :PackedScene
 var spawn_points := []
 var enemy_type 
 signal wave_finished
 @export var wave_counter = 20
+@export var wave_counter2 =  30 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for i in get_children(): 
@@ -19,25 +21,41 @@ func _ready():
 			spawn_points.append(i)
 	#PlayerStats.wave_finished.connect(next_wave)
 	call_deferred("next_wave")
-	
+
+
 
 func next_wave():
 	first_wave()
 	await PlayerStats.wave_finished
 	second_wave()
 	await PlayerStats.wave_finished
+	third_wave()
+	await PlayerStats.wave_finished
+	
 	
 func first_wave():
 	$Timer.start()
 	enemy_type = KidEnemyZombie
-	wave_counter = 5
+	wave_counter = 3
 	PlayerStats.enemy_left = wave_counter
 
 
 func second_wave():
 	$Timer.start()
 	enemy_type = SkinnyEnemyZombie
-	wave_counter = 30
+	wave_counter = 3
+	PlayerStats.enemy_left = wave_counter2
+
+func third_wave():
+	$timer.start()
+	enemy_type = BigEnemyZombie
+	wave_counter = 70
+
+
+
+
+
+
 
 func _on_timer_timeout():
 	wave_counter -= 1

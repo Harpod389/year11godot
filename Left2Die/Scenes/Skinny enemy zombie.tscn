@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://b8w0rk065k1n7"]
+[gd_scene load_steps=23 format=3 uid="uid://b8w0rk065k1n7"]
 
+[ext_resource type="Script" path="res://Scenes/skinny_enemy_zombie.gd" id="1_nkrgm"]
 [ext_resource type="Texture2D" uid="uid://cvt4vpyg4oa71" path="res://Sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0409_Capa-410.png" id="1_t8aj2"]
 [ext_resource type="Texture2D" uid="uid://ciwk5buin5aoo" path="res://Sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0410_Capa-411.png" id="2_tkp7m"]
 [ext_resource type="Texture2D" uid="uid://2gr1svph83g0" path="res://Sprites/Damaged Skinny Zombie Animation Frames/Zombie-Tileset---_0411_Capa-412.png" id="3_nxwvs"]
@@ -31,7 +32,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("3_nxwvs")
 }],
-"loop": true,
+"loop": false,
 "name": &"Damaged- up",
 "speed": 5.0
 }, {
@@ -115,10 +116,13 @@ radius = 4.0
 height = 14.0
 
 [node name="SkinnyEnemyZombie" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_nkrgm")
+
+[node name="Area2D" type="Area2D" parent="."]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8lpco")
-animation = &"Damaged-down"
+animation = &"Damaged- up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_4lwt5")
@@ -129,3 +133,7 @@ shape = SubResource("CapsuleShape2D_4lwt5")
 shape = SubResource("CapsuleShape2D_qkji5")
 
 [node name="DamageTimer" type="Timer" parent="HurtBox"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]

@@ -323,6 +323,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_tx27q")
 value = 100.0
 
 [node name="WaveFinsihedNotice" type="PanelContainer" parent="UI/Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
