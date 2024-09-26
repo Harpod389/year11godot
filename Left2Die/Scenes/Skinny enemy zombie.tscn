@@ -116,6 +116,8 @@ radius = 4.0
 height = 14.0
 
 [node name="SkinnyEnemyZombie" type="CharacterBody2D" groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_nkrgm")
 
 [node name="Area2D" type="Area2D" parent="."]

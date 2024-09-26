@@ -7,6 +7,7 @@ var gun_projectiles = 1
 var gun_time = 0.8
 var gun_knockback = 10 
 
+#This function updates the gun stats after each wave finished notice 
 func level_up_gun():
 	gun_wave +=1
 	match gun_wave: 

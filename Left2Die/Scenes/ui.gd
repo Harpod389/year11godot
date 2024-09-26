@@ -11,7 +11,7 @@ extends CanvasLayer
 
 
 
-
+#This function connects all the signals to their in game stats
 func _ready():
 	print(wave_finsihed_notice)
 	PlayerStats.level_up.connect(level_up)
@@ -19,16 +19,17 @@ func _ready():
 	PlayerStats.take_damage.connect(update_health)
 	PlayerStats.speed.connect(update_speed)
 
-
+#This function controls all the player's stats relatiing to spped
 func update_speed():
 	speed.max_value = PlayerStats.next_SPEED
 	speed.value = PlayerStats.SPEED
-	
-
+	#
+#This function controls all the player's stats relatiing to speed
 func update_xp():
 	experience.max_value = PlayerStats.next_level
 	experience.value = PlayerStats.player_experience
 
+#This function controls the players health
 func update_health():
 	print("updating health")
 	health.max_value = PlayerStats.player_max_health

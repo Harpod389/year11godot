@@ -12,7 +12,7 @@ var dead = false
 
 
 
-
+#This function codes for the damage taken to the player when the enemy collides with the zombie 
 func check_collisions():
 	if not damage_timer.is_stopped():
 		return
@@ -26,7 +26,7 @@ func check_collisions():
 
 
 
-
+#his code uses the degrees that the enemy is in relative to the map, to determine which of the movement animations it plays
 func check_animation(): 
 	var angle = rad_to_deg(velocity.angle())
 	if angle >-45 and angle < 45:
@@ -38,7 +38,7 @@ func check_animation():
 	if(angle> -135 and angle <-45):
 		animated_sprite_2d.play("Up")
 
-
+#This code is responsible for respawning the player once they are dead, but also maing sure the enmy has the correct rotation
 func _physics_process(delta):
 	if dead :
 		return
@@ -57,7 +57,7 @@ func _physics_process(delta):
 
 
 
-
+# This registers the death animation of the zombie once their health is zero, and also adds one to the player score.
 func take_damage(dmg):
 	if dead:return
 	health -= dmg
@@ -74,7 +74,7 @@ func take_damage(dmg):
 
 
 
-
+#This function makes sure that the enemy zombie takes 5 damage once they are hit with a bullet
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("Bullet"):
 		take_damage(5)
@@ -91,7 +91,7 @@ func _on_hurt_box_area_entered(area):
 		#area.queue_free()
 
 
-
+#This code makes sure that the player takes damage when they collide, but also does not allow for the player to die at once 
 func _on_hurt_box_body_entered(body):
 	if body.is_in_group("Player"):
 		#body.get_damage(10)

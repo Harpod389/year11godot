@@ -14,6 +14,7 @@ signal wave_finished
 signal take_damage
 signal speed
 
+#This function makes sure that the player levels up
 func level_up_player():
 	player_level+=1
 	next_level = next_level + 10 
@@ -21,17 +22,19 @@ func level_up_player():
 	emit_signal("level_up")
 	
 	
+	#This function updates the player health in their stats 
 func add_max_health():
 	player_max_health += 20
 	player_health = player_max_health
 	emit_signal("take_damage")
 
+#This function levels up the speed of the player if they click that option on the level up notice
 func level_up_speed():
 	SPEED += 100
 	next_SPEED= SPEED
 	emit_signal("speed")
 
-
+#This function makes sure that once the enemies are dead, wave finished notice apears
 func enemy_killed():
 	enemy_left -=1
 	if enemy_left <= 0:
@@ -42,7 +45,7 @@ func enemy_killed():
 	#emit_signal("add_xp")
 	#if player_experience >= next_level:
 		#level_up_player()
-	
+	#This function registers the player health in the player stats 
 func damage_player(amount):
 	print("damaged")
 	player_health -= amount

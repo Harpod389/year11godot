@@ -12,7 +12,7 @@ position = Vector2(70, 612)
 position = Vector2(1144, 147)
 
 [node name="Marker2D3" type="Marker2D" parent="."]
-position = Vector2(163, 57)
+position = Vector2(164, 25)
 
 [node name="Marker2D4" type="Marker2D" parent="."]
 position = Vector2(1145, 354)
@@ -27,16 +27,16 @@ position = Vector2(460, 612)
 position = Vector2(197, 618)
 
 [node name="Marker2D8" type="Marker2D" parent="."]
-position = Vector2(569, 34)
+position = Vector2(569, 22)
 
 [node name="Marker2D9" type="Marker2D" parent="."]
 position = Vector2(638, 612)
 
 [node name="Marker2D10" type="Marker2D" parent="."]
-position = Vector2(721, 35)
+position = Vector2(720, 16)
 
 [node name="Marker2D11" type="Marker2D" parent="."]
-position = Vector2(1115, 572)
+position = Vector2(1121, 592)
 
 [node name="Marker2D12" type="Marker2D" parent="."]
 position = Vector2(947, 49)

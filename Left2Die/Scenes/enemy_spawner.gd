@@ -23,7 +23,7 @@ func _ready():
 	call_deferred("next_wave")
 
 
-
+#This function manages the waves, and ensures that the wave finished notice apears after each wave
 func next_wave():
 	first_wave()
 	await PlayerStats.wave_finished
@@ -32,22 +32,23 @@ func next_wave():
 	third_wave()
 	await PlayerStats.wave_finished
 	
-	
+#This calls the first wave, and states the zombie type, the amount of enemies in this wave.
 func first_wave():
 	$Timer.start()
 	enemy_type = KidEnemyZombie
-	wave_counter = 3
+	wave_counter = 35
 	PlayerStats.enemy_left = wave_counter
 
-
+#This calls the Second wave, and states the zombie type, the amount of enemies in this wave.
 func second_wave():
 	$Timer.start()
 	enemy_type = SkinnyEnemyZombie
-	wave_counter = 3
+	wave_counter = 50
 	PlayerStats.enemy_left = wave_counter2
 
+#This calls the third wave, and states the zombie type, the amount of enemies in this wave.
 func third_wave():
-	$timer.start()
+	$Timer.start()
 	enemy_type = BigEnemyZombie
 	wave_counter = 70
 
@@ -56,7 +57,7 @@ func third_wave():
 
 
 
-
+#This is called when all enemies of a wave have been killed, and states that the next enemy type of zombies need to spawn in
 func _on_timer_timeout():
 	wave_counter -= 1
 	var spawn = spawn_points[randi() % spawn_points.size()]

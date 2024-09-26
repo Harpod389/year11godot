@@ -14,6 +14,7 @@ var died = false
 
 
 const BULLET = preload("res://Scenes/Bullet.tscn")
+#This function ensures that the appropriate player animation plays when the player is standing still, idle, running etc
 func check_animation():
 	if velocity == Vector2.ZERO:
 		sprite.play("Idle")
@@ -22,7 +23,7 @@ func check_animation():
 	if Input.is_action_pressed("shoot"):
 		sprite.play("Shooting")
 	
-#
+#This function makes sure that the PLayer's apropriate animation plays, and also makes sure that the UI updates
 func get_damage(amount):
 	if died:
 		return
@@ -37,9 +38,13 @@ func get_damage(amount):
 		await $Sprite.animation_finished
 		get_tree().reload_current_scene()
 		
+#check_animation()
 
 
 
+
+
+#This function controls the players basic movement, and their correct orientation
 func _physics_process(delta):
 	if died == false:
 		var direction = Input.get_vector("left","right","up","down").normalized()
@@ -53,7 +58,7 @@ func _physics_process(delta):
 						sprite.flip_h = true 
 
 
-
+#This function makes sure that bullet apears and also shoots at the players mouse direction when they right click. It also plays the sound effect after they shoot
 		if Input.is_action_just_pressed("shoot"):
 						var new_bullet = BULLET.instantiate()
 						new_bullet.global_position = global_position
