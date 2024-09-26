@@ -11,6 +11,9 @@ var dead = false
 @onready var damage_timer: Timer = $HurtBox/DamageTimer
 @export var damage = 20 
 
+#func ready():
+	#PlayerStats.enemy_killed().connect()
+
 #This function codes for the damage taken to the player when the enemy collides with the zombie 
 func check_collisions():
 	if not damage_timer.is_stopped():
@@ -34,6 +37,7 @@ func check_animation():
 		animated_sprite_2d.play("Down")
 	if(angle> -135 and angle <-45):
 		animated_sprite_2d.play("Up")
+
 
 # This registers the death animation of the zombie once their health is zero, and also adds one to the player score.
 func _physics_process(delta):

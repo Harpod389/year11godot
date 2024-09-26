@@ -9,7 +9,8 @@ var dead = false
 @onready var damage_timer: Timer = $HurtBox/DamageTimer
 @export var damage = 10
 
-
+#func ready():
+	#PlayerStats.enemy_killed().connect(take_damage)
 
 
 #This function codes for the damage taken to the player when the enemy collides with the zombie 

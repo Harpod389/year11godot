@@ -3,9 +3,6 @@ extends Node2D
 @onready var world = get_node("/root/World")
 
 @onready var enemy_spawner: Node2D = $"."
-
-
-
 @export var BigEnemyZombie : PackedScene
 @export var KidEnemyZombie :PackedScene
 @export var SkinnyEnemyZombie :PackedScene
@@ -36,14 +33,14 @@ func next_wave():
 func first_wave():
 	$Timer.start()
 	enemy_type = KidEnemyZombie
-	wave_counter = 35
+	wave_counter = 3
 	PlayerStats.enemy_left = wave_counter
 
 #This calls the Second wave, and states the zombie type, the amount of enemies in this wave.
 func second_wave():
 	$Timer.start()
 	enemy_type = SkinnyEnemyZombie
-	wave_counter = 50
+	wave_counter = 5
 	PlayerStats.enemy_left = wave_counter2
 
 #This calls the third wave, and states the zombie type, the amount of enemies in this wave.

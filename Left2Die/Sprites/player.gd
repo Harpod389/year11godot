@@ -12,6 +12,9 @@ extends CharacterBody2D
 const DAMAGE_RATE = 5.0
 var died = false
 
+func _ready() -> void:
+	PlayerStats.take_damage.connect(get_damage)
+	
 
 const BULLET = preload("res://Scenes/Bullet.tscn")
 #This function ensures that the appropriate player animation plays when the player is standing still, idle, running etc
@@ -24,18 +27,19 @@ func check_animation():
 		sprite.play("Shooting")
 	
 #This function makes sure that the PLayer's apropriate animation plays, and also makes sure that the UI updates
-func get_damage(amount):
+func get_damage():
 	if died:
 		return
-	health -= amount
-	$UI/Control/Health.value = health
-	print(health)
+	#health -= amount
+	#$UI/Control/Health.value = health
+	#print(health)
 	$Sprite.play("Damage")
-	if health <= 0:
+	if PlayerStats.player_health <= 0:
 		print("i died")
 		$Sprite.play("Death")
 		died = true
 		await $Sprite.animation_finished
+		PlayerStats.reset()
 		get_tree().reload_current_scene()
 		
 #check_animation()
